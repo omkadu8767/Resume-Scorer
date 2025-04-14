@@ -4,19 +4,19 @@ import React from 'react';
 function Footer() {
   return (
     <footer className="bg-white">
-      <div className="max-w-7xl mx-auto py-4 px-6 flex items-center justify-between lg:px-8">
+      <div className="max-w-7xl mx-auto py-4 px-6 flex flex-col md:flex-row items-center justify-between lg:px-8">
         {/* Left side: Copyright */}
-        <div className="text-base font-medium text-gray-600" style={{ color: '#443CCC' }}>
+        <div className="text-base font-medium text-gray-600 mb-4 md:mb-0" style={{ color: '#443CCC' }}>
           &copy; 2025 ResumeScorer. All rights reserved.
         </div>
 
         {/* Center: Powered by Gemini */}
         <div
-          className="text-base font-semibold text-center"
+          className="text-base font-semibold text-center mb-4 md:mb-0"
           style={{ color: '#443CCC', fontFamily: 'Poppins, sans-serif' }}
         >
           Made Using Gemini 2.0 Flash<br />
-          Developed By <a href='https://www.linkedin.com/in/om-kadu-53305425a/'>Om Kadu</a>
+          Developed By <a href="https://www.linkedin.com/in/om-kadu-53305425a/" className="underline hover:text-gray-500">Om Kadu</a>
         </div>
 
         {/* Right side: Social Media Icons */}
