@@ -53,7 +53,7 @@ function Scanner() {
     try {
       const text = await file.text();
 
-      const genAI = new GoogleGenerativeAI(apiKey || 'AIzaSyCpZuY3LPAeBdVA2ekLUy-H1-30YBJVZzw');
+      const genAI = new GoogleGenerativeAI(apiKey || import.meta.env.VITE_GEMINI_API_KEY);
       const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
       const prompt = `
