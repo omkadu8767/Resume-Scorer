@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
 import { DownloadCloud } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
 
 const ATS = () => {
     const [countdown, setCountdown] = useState(null);
     const [downloaded, setDownloaded] = useState(false);
+    const downloadRef = useRef(null);
 
     useEffect(() => {
         if (countdown === null || countdown === 0) return;
@@ -18,7 +19,7 @@ const ATS = () => {
     useEffect(() => {
         if (countdown === 0) {
             const link = document.createElement("a");
-            link.href = "src/public/ATS Resume.pdf";
+            link.href = "src/public/ATS_Resume.pdf";
             link.download = "ATS.pdf";
             link.click();
             setCountdown(null);
@@ -38,8 +39,9 @@ const ATS = () => {
                     Download your ATS-optimized resumes instantly with just one click.
                 </p>
 
+                <div className="flex justify-center items-center">
                 <button
-                    className="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition"
+                    className="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition hidden sm:block sm:mt-4"
                     onClick={() => {
                         setCountdown(3);
                         setDownloaded(false);
@@ -47,6 +49,16 @@ const ATS = () => {
                 >
                     Click to Download PDF
                 </button>
+                </div>
+
+                  {/* only for mobile  */}
+                <a
+                    href="src/public/ATS_Resume.pdf"
+                    download="ATS_Resume.pdf"
+                    ref={downloadRef}
+                    className="inline-flex items-center justify-center bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition sm:hidden"
+                    
+                > Click to Download PDF</a>
 
                 {countdown !== null && (
                     <div className="mt-4 text-indigo-700 font-medium text-lg">
