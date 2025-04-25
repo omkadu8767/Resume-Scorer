@@ -134,14 +134,24 @@ function Home() {
           <p className="mt-4 text-lg leading-6 text-indigo-200">
             Start using ResumeScorer today and transform your hiring process with the power of AI.
           </p>
-          <Link
-            to="/scanner"
-            className="mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 sm:w-auto"
-          >
-            Try Scanner Now
-          </Link>
+
+          <div className="mt-8 flex flex-col items-center gap-4">
+            <Link
+              to="/scanner"
+              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 transition"
+            >
+              Try Scanner Now
+            </Link>
+            <Link
+              to="/ats"
+              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-800 hover:bg-indigo-900 transition"
+            >
+              Download ATS Resumes
+            </Link>
+          </div>
         </div>
       </div>
+
     </div>
   );
 }
