@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Features from './pages/Features';
 import Home from './pages/Home';
 import Scanner from './pages/Scanner';
+import ATS  from './pages/ATS';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
                   <Link to="/features" className="text-gray-900 hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">
                     Features
                   </Link>
+                  <Link to="/ats" className="text-gray-900 hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">
+                    ATS
+                  </Link>
                 </div>
               </div>
               <div className="flex items-center">
@@ -47,6 +51,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/scanner" element={<Scanner />} />
             <Route path="/features" element={<Features />} />
+            <Route path="/ats" element={<ATS />} />
           </Routes>
         </main>
 
